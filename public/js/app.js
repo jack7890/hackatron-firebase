@@ -89,15 +89,11 @@ var ProjectList = React.createClass({
       });
     });
     var all_votes = votes_array.concat(this.state.bourbon_votes);
-    var ballot = {
-      'user_id': userData.github.username,
-      'votes': all_votes
-    };
-    console.log(ballot);
     var ballotsRef = rootRef.child("ballots");
     var newBallotRef = ballotsRef.push();
     newBallotRef.set({
-      ballot
+      'user_id': userData.github.username,
+      'votes': all_votes
     }, function(error) {
       if(error) {
         alert("Data could not be saved." + error);
