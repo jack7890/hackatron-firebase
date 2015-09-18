@@ -14,7 +14,7 @@ rootRef.onAuth(function(authData) {
       }
     });
   }
-})
+});
 
 var bourbon_category_data = [
   {

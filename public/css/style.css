@@ -425,3 +425,18 @@ h5 {
 .project:nth-child(1) {
   padding-top: 54px;
 }
+#results {
+  width: 500px;
+  margin: 40 auto;
+}
+#results ul {
+  margin-bottom: 34px;
+  list-style: none;
+  position: relative;
+  top: -6px;
+  margin-left: 0;
+  padding-left: 0;
+}
+#results ul li span {
+  font-weight: bold;
+}
