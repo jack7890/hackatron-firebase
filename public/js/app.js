@@ -39,13 +39,6 @@ var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 var ProjectList = React.createClass({
   getInitialState: function() {
-    // Determine if user has already submitted ballot
-    var ballotsRef = rootRef.child("ballots");
-    ballotsRef.on("value", function(snapshot) {
-      console.log(snapshot.val());
-    }, function (errorObject) {
-      console.log("The read failed: " + errorObject.code);
-    });
     return {
       "votes": [],
       "bourbon_votes": [],
@@ -57,6 +50,12 @@ var ProjectList = React.createClass({
     var ref = rootRef.child('projects');
     ref.on("value", function(snapshot) {
       this.setState({"projects": snapshot.val()});
+    }.bind(this));
+    var ballotsRef = rootRef.child('ballots');
+    ballotsRef.orderByChild("user_id").equalTo(userData.github.username).on("value", function(snapshot) {
+      if(snapshot.val()) {
+        this.setState({"ballot_submitted": true});;
+      }
     }.bind(this));
   },
   makeVote: function(id) {
