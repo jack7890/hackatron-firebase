@@ -94,7 +94,7 @@ p.description {
   color: #828995;
   font-size: 16px;
   font-weight: normal;
-  width: 380px;
+  width: 450px;
   margin-bottom: 28px;
 }
 .project_link {
@@ -443,7 +443,7 @@ h5 {
 body {
   width: 100%;
 }
-@media (max-width: 1600px) {
+@media (max-width: 700px) {
     .project_container {
       width: 94%;
     }
