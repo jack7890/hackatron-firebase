@@ -51,13 +51,6 @@ h3 div.vote_button + span {
   position: relative;
   top: 2px;
 }
-.project {
-  float: left;
-  width: 100%;
-  clear: both;
-  border-bottom: 1px solid #E7E9F2;
-  padding-bottom: 96px;
-}
 .project:nth-child(odd) {
   padding-top: 52px;
 }
@@ -76,20 +69,6 @@ h3 div.vote_button + span {
   width: 680px;
   position: relative;
   margin: 0 auto;
-}
-@media screen and ( max-height: 750px ){
-  #content {
-    padding-top: 132px;
-  }
-  .project {
-    padding-bottom: 44px;
-  }
-  .project:nth-child(odd) {
-    padding-top: 40px;
-  }
-  project:nth-child(even) {
-    padding-top: 40px;
-  }
 }
 .authors {
   top: -10px;
@@ -426,4 +405,23 @@ h5 {
 }
 .close_bourbon_choices:active {
   color: #414141;
+}
+#content {
+  padding-top: 132px;
+}
+.project {
+  float: left;
+  width: 100%;
+  clear: both;
+  border-bottom: 1px solid #E7E9F2;
+  padding-bottom: 44px;
+}
+.project:nth-child(odd) {
+  padding-top: 40px;
+}
+.project:nth-child(even) {
+  padding-top: 40px;
+}
+.project:nth-child(1) {
+  padding-top: 54px;
 }

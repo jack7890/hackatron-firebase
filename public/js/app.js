@@ -244,20 +244,20 @@ var Project = React.createClass({
   },
   render: function() {
     var that = this;
-    // var authorNodes = this.props.project.members.map(function (author) {
-    //   var render_name;
-    //   if(author.name) {
-    //     render_name = author.name;
-    //   } else {
-    //     render_name = author.username;
-    //   }
-    //   return (
-    //     <div className="author">
-    //       <label>{render_name}</label>
-    //       <img src={author.avatar_url} />
-    //     </div>
-    //   )
-    // });
+    var authorNodes = this.props.project.members.map(function (author) {
+      var render_name;
+      if(author.name) {
+        render_name = author.name;
+      } else {
+        render_name = author.username;
+      }
+      return (
+        <div className="author">
+          <label>{render_name}</label>
+          <img src={author.avatar_url} />
+        </div>
+      )
+    });
     var bourbonNodes = this.props.bourbon_choices.map(function (choice) {
       return (
         <li data-id={choice.voting_category_id} onClick={that.handleBourbonVote} className="choice">
@@ -312,6 +312,7 @@ var Project = React.createClass({
             {(this.props.project.name.length > 1) ? this.props.project.name : this.props.project.username}
           </h3>
           <div className="authors">
+            {authorNodes}
           </div>
           <p className="description">
             {this.props.project.description}
